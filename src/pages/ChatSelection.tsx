@@ -1,9 +1,8 @@
-import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { motion } from 'framer-motion';
 import { Button } from '../components/Button';
 import { useAuthStore } from '../store/authStore';
-import { Users, User } from 'lucide-react';
+import { Layout } from '../components/Layout';
+import { ChatOption } from '../components/ChatOption';
 
 export default function ChatSelection() {
   const navigate = useNavigate();
@@ -16,7 +15,7 @@ export default function ChatSelection() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <Layout>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-6">
           <h1 className="text-2xl font-bold text-gray-900">Welcome, {user?.name}</h1>
@@ -31,46 +30,35 @@ export default function ChatSelection() {
           </h2>
 
           <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:gap-16">
-            <motion.div
-              whileHover={{ scale: 1.02 }}
-              className="relative rounded-lg border border-gray-300 bg-white px-6 py-5 shadow-sm flex items-center space-x-3 hover:border-primary cursor-pointer"
+            <ChatOption
+              title="Howami Companion"
+              description="Get support and answers tailored for teenagers"
+              imageSrc="https://images.unsplash.com/photo-1571442463800-1337d7af9d2f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2940&q=80"
               onClick={() => navigate('/chat/teen')}
-            >
-              <div className="flex-shrink-0">
-                <User className="h-10 w-10 text-primary" />
-              </div>
-              <div className="flex-1 min-w-0">
-                <div className="focus:outline-none">
-                  <span className="absolute inset-0" aria-hidden="true" />
-                  <p className="text-xl font-medium text-gray-900">Teen Chat</p>
-                  <p className="text-sm text-gray-500">
-                    Get support and answers tailored for teenagers
-                  </p>
-                </div>
-              </div>
-            </motion.div>
-
-            <motion.div
-              whileHover={{ scale: 1.02 }}
-              className="relative rounded-lg border border-gray-300 bg-white px-6 py-5 shadow-sm flex items-center space-x-3 hover:border-secondary cursor-pointer"
+            />
+            <ChatOption
+              title="Howami Parental Companion"
+              description="Get guidance on supporting your teenager"
+              imageSrc="https://images.unsplash.com/photo-1516627145497-ae6968895b74?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2940&q=80"
               onClick={() => navigate('/chat/parent')}
-            >
-              <div className="flex-shrink-0">
-                <Users className="h-10 w-10 text-secondary" />
-              </div>
-              <div className="flex-1 min-w-0">
-                <div className="focus:outline-none">
-                  <span className="absolute inset-0" aria-hidden="true" />
-                  <p className="text-xl font-medium text-gray-900">Parent Chat</p>
-                  <p className="text-sm text-gray-500">
-                    Get guidance on supporting your teenager
-                  </p>
-                </div>
-              </div>
-            </motion.div>
+            />
+          </div>
+
+          <div className="mt-16 bg-white rounded-lg shadow-sm p-8">
+            <h3 className="text-xl font-semibold text-gray-900 mb-4">
+              Additional Information
+            </h3>
+            <div className="prose max-w-none">
+              <p className="text-gray-600">
+                Welcome to Howami, your trusted companion for navigating important conversations 
+                about menstrual health. Whether you're a teenager seeking answers or a parent 
+                looking to provide better support, we're here to help guide these important 
+                discussions with care and understanding.
+              </p>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </Layout>
   );
 }

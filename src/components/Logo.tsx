@@ -1,16 +1,16 @@
-import React from 'react';
-import logo from '../assets/logo.svg';
+import { FC } from 'react';
+import logo from '../assets/H Logo.png';
 
 interface LogoProps {
   className?: string;
 }
 
-export const Logo: React.FC<LogoProps> = ({ className = 'w-12 h-12' }) => {
+export const Logo: FC<LogoProps> = ({ className = 'w-12 h-12' }) => {
   return (
     <img
       src={logo}
       alt="Howami Logo"
-      className={`${className} text-primary`}
+      className={className}
     />
   );
 };

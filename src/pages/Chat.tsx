@@ -7,6 +7,7 @@ import { useAuthStore } from '../store/authStore';
 import { openai } from '../config/openai';
 import { CHAT_PROMPTS } from '../config/prompts';
 import { MessageCircle, Send, ArrowLeft, History } from 'lucide-react';
+import { Layout } from '../components/Layout';
 
 interface Message {
   role: 'user' | 'assistant';
@@ -61,7 +62,7 @@ export default function Chat() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 flex flex-col">
+    <Layout showLogo={false}>
       <div className="bg-white shadow">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center py-6">
@@ -139,6 +140,6 @@ export default function Chat() {
           </div>
         </div>
       </div>
-    </div>
+    </Layout>
   );
 }
