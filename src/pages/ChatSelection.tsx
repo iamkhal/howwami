@@ -50,10 +50,13 @@ export default function ChatSelection() {
             </h3>
             <div className="prose max-w-none">
               <p className="text-gray-600">
-                Welcome to Howami, your trusted companion for navigating important conversations 
-                about menstrual health. Whether you're a teenager seeking answers or a parent 
-                looking to provide better support, we're here to help guide these important 
-                discussions with care and understanding.
+              This is a completely private, Al-assisted menstrual and emotion conversational guide. Here you can track and learn about your own menstrual cycle, your emotions, your general wellness or learn about those you care for
+
+You will receive supportive, empathetic, and insightful conversational insights from our carefully crafied Al model. It has been instructed to help users track, understand, and reflect on their menstrual cycle and emotions using the "Inner Seasons" concept.
+If you are wanting to track, understand and reflect on your own cycle, choose the "Howami Companion"
+If you are wanting to understand and learn about the cycle of someone you care for, then choose the "Howami Parental Companion"
+Please refer to our website for more detail: https://www.howami.co/al-companion
+Or for other contact: team@howami.co
               </p>
             </div>
           </div>
